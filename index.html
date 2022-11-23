@@ -1007,7 +1007,6 @@
     <script type="module">
         import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.module.js';
         import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/loaders/GLTFLoader.js';
-        import { DRACOLoader } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/loaders/DRACOLoader.js'
         //import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
 
 var target = new THREE.Vector2();
@@ -1043,12 +1042,7 @@ scene.add( lightbb );
 
 ///////
 var loader = new GLTFLoader();
-const dracoLoader = new DRACOLoader()
-dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/')
-dracoLoader.setDecoderConfig({ type: 'js' })
-loader.setDRACOLoader(dracoLoader)
-
-loader.load( 'https://csb10032000c4954119.blob.core.windows.net/model/buildingmodel-v1.glb', function ( gltf ) {
+loader.load( 'buildingmodel.glb', function ( gltf ) {
 gltf.scene.traverse( function ( child ) {} );
 gltf.scene.scale.set(.31,.31,.31);
 gltf.scene.translateX( 0.7 );
